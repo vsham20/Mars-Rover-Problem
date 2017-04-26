@@ -1,7 +1,7 @@
 def mars_rover(upper_right_coordinates,rover_position,instructions):
-	input1_new = upper_right_coordinates.split()
-	corner_x = input1_new[0]
-	corner_y = input1_new[1]
+	input1 = upper_right_coordinates.split()
+	corner_x = input1[0]
+	corner_y = input1[1]
 	rover_position_list = rover_position.split()
 	x = int(rover_position_list[0])
 	y = int(rover_position_list[1])
@@ -36,8 +36,9 @@ def mars_rover(upper_right_coordinates,rover_position,instructions):
 		print "Position out of grid."	
 	return x,y, new_dir
 if __name__ == '__main__':
-	upper_right_coordinates = "5 5"
-	rover_position = "3 3 E"
-	instructions = "MMRMMRMRRM"
-	print mars_rover(upper_right_coordinates,rover_position,instructions)
+	upper_right_coordinates = raw_input("Enter Grid Size")
+	while True:
+		rover_position = raw_input("Enter rover's initial position")
+		instructions = raw_input("Enter instructions")
+		print mars_rover(upper_right_coordinates,rover_position,instructions)
 
