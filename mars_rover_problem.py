@@ -30,7 +30,7 @@ def mars_rover(upper_right_coordinates,rover_position,instructions):
 
 				curr_dir = ','.join([new_dir,i])
 				new_dir = dirs[curr_dir]
-		if x in range(0,corner_x) and y in range(0,corner_y):
+		if x in xrange(0,corner_x) and y in xrange(0,corner_y):
 			return x,y, new_dir
 		else:
 			print "Moved out of grid"
