@@ -3,7 +3,6 @@ def mars_rover(upper_right_coordinates,rover_position,instructions):
 	# x,y,new_dir = map(int, rover_position.split())
 	x,y,new_dir = rover_position.split()
 	x,y = int(x),int(y)
-	print type(corner_x), type(corner_y)
 	if x <= corner_x and y <= corner_y:
 		dirs = {'E,L': 'N',
 				 'E,R': 'S',
@@ -31,7 +30,10 @@ def mars_rover(upper_right_coordinates,rover_position,instructions):
 
 				curr_dir = ','.join([new_dir,i])
 				new_dir = dirs[curr_dir]
-		return x,y, new_dir
+		if x in range(0,corner_x) and y in range(0,corner_y):
+			return x,y, new_dir
+		else:
+			print "Moved out of grid"
 	else:
 		print "Position out of grid."	
 if __name__ == '__main__':
